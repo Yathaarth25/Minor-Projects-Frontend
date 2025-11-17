@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Changing app</title>
+    <style>
+          body{
+            background: #f0f0f0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 50px;
+            text-align: center;
+          }
+          .container{
+            background:white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h1{
+            color: #56b263;
+        }
+        button {
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn-change_colour{
+            background: #ff6b6b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Colour changing app</h1>
+        <p> Change background colour by clicking on the below button</p>
+        <div>
+        <button onclick="change_Colour()" class="btn-change_colour">
+            Change colour
+        </button>
+    </div>
+    </div>
+    <script>
+        const color=["Red","Blue","Green","Yellow","Pink"];
+                let currentIndex=0;
+        function change_Colour(){
+            //const randomIndex=Math.floor(Math.random()=color.length);
+           
+            const randomIndex=currentIndex+1%color.length;
+            //document.body.style.background=color[randomIndex];
+            for(let i=0;i<color.length;i++){
+                if(i===currentIndex){
+                    document.body.style.background=color[currentIndex];
+                    break;
+                }
+
+            }
+            currentIndex++;
+            if(currentIndex>=color.length){
+                currentIndex=0;
+            }
+             
+        }
+      
+    </script>
+</body>
+</html>
